@@ -1,7 +1,7 @@
 # AckermanSFM — Sistem ADAS Berbasis ROS
 
-> **Proyek Akhir Sarjana Terapan** | Teknik Elektronika | 2026  
-> Pengembang: **Azra Pralingga** (NIM: 3222600053)
+> **Proyek Akhir Sarjana Terapan** | Teknik Komputer | 2026  
+> Pengembang: **Azra Pralingga**
 
 ---
 
