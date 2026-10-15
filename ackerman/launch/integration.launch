@@ -1,0 +1,46 @@
+<launch>
+    <node name="rplidarNode"          pkg="rplidar_ros"  type="rplidarNode" output="screen">
+        <param name="serial_port"         type="string" value="/dev/ttyUSB0"/>
+        <param name="serial_baudrate"     type="int"    value="256000"/>
+        <param name="frame_id"            type="string" value="laser"/>
+        <param name="inverted"            type="bool"   value="false"/>
+        <param name="angle_compensate"    type="bool"   value="true"/>
+    </node>
+
+    <include file="$(find camera_access)/launch/camera_publisher_node.launch" />
+
+    <node pkg="rosserial_server" type="serial_node" name="serial_node" output="screen">
+        <param name="port" value="/dev/openrb" />
+        <param name="baud" value="57600" />
+    </node>
+    
+    <include file="$(find time_sync_pkg)/launch/time_sync_node.launch" />
+
+    <node pkg="ackerman" type="lidar_scan_node" name="lidar_scan_node" output="screen"/>
+
+    <node pkg="ackerman" type="encoder_read" name="encoder_read" output="screen"/>
+
+    <node pkg="ackerman" type="fuzzy" name="fuzzy" output="screen"/>
+
+    <node pkg="ackerman" type="fuzzy_lka_node" name="fuzzy_lka_node" output="screen"/>
+    
+    <node pkg="ackerman" type="sfmazra" name="sfmazra" output="screen"/>
+
+    <node pkg="ackerman" type="lanekeepingassist" name="lanekeepingassist" output="screen"/>
+
+    <!-- <node pkg="yolov8_seg_ros" type="yolov8_seg_node" name="yolov8_seg_node" output="screen"/> -->
+
+    <node pkg="ackerman" type="driveazra" name="driveazra" output="screen" launch-prefix="bash -c 'sleep 3; $0 $@'"/>
+    
+    <node pkg="ackerman" type="keyboard_handler" name="keyboard_handler" output="screen"/>
+
+    <node pkg="ackerman" type="dashboard" name="dashboard" output="screen"/>
+
+    <node name="animation" pkg="ackerman" type="animationnew.py" output="screen"/>
+
+    <node pkg="ackerman" type="data_log_integrasi" name="data_log_integrasi" output="screen"/>
+    
+    <!-- Logger LKA digabungkan ke data_log_integrasi, lka_logger.py dinonaktifkan -->
+    <!-- <node pkg="ackerman" type="lka_logger.py" name="lka_fps_logger" output="screen"/> -->
+    
+</launch>

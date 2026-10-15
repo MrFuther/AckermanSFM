@@ -1,0 +1,18 @@
+ <launch>
+
+    <node pkg="rosserial_server" type="serial_node" name="serial_node" output="screen">
+        <param name="port" value="/dev/openrb" />
+        <param name="baud" value="57600" />
+    </node>
+  
+
+
+ <node pkg="ackerman" type="drive" name="drive" output="screen" launch-prefix="bash -c 'sleep 3; $0 $@'">
+    </node>
+
+    <node pkg="ackerman" type="keyboard_handler" name="keyboard_handler" output="screen">
+    </node>
+
+    <node pkg="ackerman" type="encoder_read" name="encoder_read" output="screen">
+    </node>
+</launch>

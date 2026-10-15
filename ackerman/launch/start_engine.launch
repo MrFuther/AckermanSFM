@@ -1,0 +1,54 @@
+<launch>
+<!--
+<node pkg="cv_camera" type="cv_camera_node" name="cv_camera" output="screen">
+  <param name="device_id" value="0"/>
+    <param name="image_width" value="160"/>
+    <param name="image_height" value="120"/>
+
+</node>
+
+<node pkg="tf" type="static_transform_publisher" name="camera_frames_pub" args="0.05 0.0 0.1 0 0 0 /base_link /camera 35"/>
+
+
+<include file="$(find ydlidar_ros_driver)/launch/lidar.launch" />
+<node name="rviz" pkg="rviz" type="rviz" args="-d $(find ydlidar_ros_driver)/launch/lidar.rviz" />
+-->
+
+
+<node name="rplidarNode"          pkg="rplidar_ros"  type="rplidarNode" output="screen">
+  <param name="serial_port"         type="string" value="/dev/ttyUSB0"/>
+  <param name="serial_baudrate"     type="int"    value="256000"/>
+  <param name="frame_id"            type="string" value="laser"/>
+  <param name="inverted"            type="bool"   value="false"/>
+  <param name="angle_compensate"    type="bool"   value="true"/>
+</node>
+
+<!--
+
+<node pkg="joy" type="joy_node" name="joy_node" output="screen"></node>
+-->
+
+
+<node pkg="rosserial_python" type="serial_node.py" name="serial_node" output="screen">
+    <param name="port" value="/dev/openrb"/>
+    <param name="baud" value="250000" />
+</node>
+
+
+<node pkg="ackerman" type="lidar.py" name="lidar" output="screen"></node>
+<!--
+<node pkg="ackerman" type="sfm_afilter.py" name="sfm_afilter" output="screen"></node>
+<node pkg="ackerman" type="sfm_bkanan.py" name="sfm_bkanan" output="screen"></node>
+<node pkg="ackerman" type="sfm_bkiri.py" name="sfm_bkiri" output="screen"></node>
+<node pkg="ackerman" type="sfm_resultant.py" name="sfm_resultant" output="screen"></node>
+-->
+<!--
+<node pkg="ackerman" type="drive.py" name="drive" output="screen"></node>
+-->
+<!--
+<node pkg="ackerman" type="odometry.py" name="odometry" output="screen"></node>
+-->
+<!--
+<node pkg="ackerman" type="cam_pub.py" name="cam_pub" output="screen"></node>
+-->
+</launch>

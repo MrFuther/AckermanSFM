@@ -1,0 +1,87 @@
+# ============================================================
+# .gitignore — AckermanSFM (ROS ADAS Project)
+# ============================================================
+
+# ─── Video & Media ──────────────────────────────────────────
+*.mp4
+*.avi
+*.mkv
+*.mov
+*.wmv
+
+# ─── Gambar hasil plot & pengujian ─────────────────────────
+# (Kecualikan semua .png di root; gambar diagram tetap bisa di-track
+#  dengan menggunakan git add -f jika diperlukan)
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.bmp
+*.svg
+
+# ─── Dokumen Word / PDF / Office ────────────────────────────
+*.pdf
+*.docx
+*.doc
+*.xlsx
+*.xls
+*.pptx
+*.ppt
+
+# ─── Arsip ──────────────────────────────────────────────────
+*.zip
+*.tar.gz
+*.tar
+*.rar
+*.7z
+
+# ─── Model Machine Learning (file besar) ────────────────────
+*.engine
+*.onnx
+*.pt
+*.weights
+*.pb
+
+# ─── File backup & sementara ────────────────────────────────
+*.save
+*.bak
+*.tmp
+*~
+titip.txt
+
+# ─── CSV data mentah / besar (di scripts/) ──────────────────
+ackerman/scripts/laser_data*.csv
+ackerman/scripts/laser_visualizer_data.csv
+
+# ─── ROS build artifacts ────────────────────────────────────
+build/
+devel/
+install/
+logs/
+.catkin_workspace
+.catkin_tools/
+*.pyc
+__pycache__/
+
+# ─── CoppeliaSim / Simulasi ────────────────────────────────
+*.ttt
+*.lua.bak
+
+# ─── IDE / Editor ───────────────────────────────────────────
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+
+# ─── Jupyter Notebook checkpoints ───────────────────────────
+.ipynb_checkpoints/
+
+# ─── Markdown hasil draft (file dokumentasi besar di root) ──
+# Tetap di-track karena berguna sebagai referensi pengembangan
+# penulisan_bab_4.md    # ← uncomment jika ingin dikecualikan
+
+# ─── Folder Hasil Pengujian (video & CSV besar) ─────────────
+Hasil Pengujian/*.mp4
+Hasil Pengujian/*.csv

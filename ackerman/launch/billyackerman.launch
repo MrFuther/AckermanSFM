@@ -1,0 +1,50 @@
+<launch>
+    <node name="rplidarNode"          pkg="rplidar_ros"  type="rplidarNode" output="screen">
+        <param name="serial_port"         type="string" value="/dev/ttyUSB0"/>
+        <param name="serial_baudrate"     type="int"    value="256000"/>
+        <param name="frame_id"            type="string" value="laser"/>
+        <param name="inverted"            type="bool"   value="false"/>
+        <param name="angle_compensate"    type="bool"   value="true"/>
+    </node>
+
+    <node pkg="rosserial_server" type="serial_node" name="serial_node" output="screen">
+        <param name="port" value="/dev/openrb" />
+        <param name="baud" value="57600" />
+    </node>
+
+    <!--<node name="animation" pkg="ackerman" type="animation.py" output="screen">
+    </node> -->
+
+    <!-- <node name="animation" pkg="ackerman" type="animationbilly.py" output="screen">
+    </node> -->
+
+    <!-- <node name="vt" pkg="ackerman" type="vt_visualizer.py" output="screen">
+    </node> -->
+
+    <!-- <node name="pid_tuner" pkg="ackerman" type="pid_tuner.py" output="screen">
+    </node> -->
+
+    <!-- <node name="sfm" pkg="ackerman" type="sfm" output="screen">
+    </node> -->
+
+    <node name="sfmbilly" pkg="ackerman" type="sfmbilly" output="screen">
+    </node>
+    
+    <node name="lidar_scan_node" pkg="ackerman" type="lidar_scan_node" output="screen">
+    </node>
+
+    <node pkg="ackerman" type="drive" name="drive" output="screen" launch-prefix="bash -c 'sleep 3; $0 $@'">
+    </node>
+
+    <node pkg="ackerman" type="keyboard_handler" name="keyboard_handler" output="screen">
+    </node>
+
+    <node pkg="ackerman" type="encoder_read" name="encoder_read" output="screen">
+    </node>
+
+    <node pkg="ackerman" type="fuzzy" name="fuzzy" output="screen">
+    </node>
+        
+    <node pkg="ackerman" type="data_log" name="data_log" output="screen">
+    </node> 
+</launch>

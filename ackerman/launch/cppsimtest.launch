@@ -1,0 +1,10 @@
+<launch>
+    <node name="sfmtest" pkg="ackerman" type="sfmtest" output="screen">
+    </node>
+
+    <node name="lidar_scan_node" pkg="ackerman" type="lidar_scan_node" output="screen">
+    </node>
+
+    <node name="animation" pkg="ackerman" type="animation.py" output="screen">
+    </node>
+</launch>

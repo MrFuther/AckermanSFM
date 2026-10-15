@@ -1,0 +1,7 @@
+<launch>
+    <node name="rplidarNode" pkg="rplidar_ros" type="rplidar_node" output="screen" />
+    <node name="ackerman_steering_node" pkg="ackerman" type="ackerman_steering_node" output="screen" />
+    
+    <node name="sfm_node" pkg="ackerman" type="sfm_node" output="screen" />
+    <node name="rqt_gui_py_node" pkg="rqt_gui" type="rqt_gui" output="screen" />
+</launch>

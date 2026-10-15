@@ -1,0 +1,28 @@
+<launch>
+
+    <include file="$(find camera_access)/launch/camera_publisher_node.launch" />
+    
+    <!-- <include file="$(find time_sync_pkg)/launch/time_sync_node.launch" />
+
+    <node pkg="ackerman" type="lidar_scan_node" name="lidar_scan_node" output="screen"/>
+
+    <node pkg="ackerman" type="encoder_read" name="encoder_read" output="screen"/>
+
+    <node pkg="yolov8_seg_ros" type="yolov8_seg_node" name="yolov8_seg_node" output="screen"/>
+
+    <node pkg="ackerman" type="fuzzy" name="fuzzy" output="screen"/>
+    
+    <node pkg="ackerman" type="sfmazra" name="sfmazra" output="screen"/>
+
+    <node pkg="ackerman" type="drive" name="drive" output="screen" launch-prefix="bash -c 'sleep 3; $0 $@'"/>
+    
+    <node pkg="ackerman" type="keyboard_handler" name="keyboard_handler" output="screen"/>
+
+    <node name="animation" pkg="ackerman" type="animationnew.py" output="screen"/>
+
+    <node pkg="ackerman" type="data_log_integrasi" name="data_log_integrasi" output="screen"/> -->
+
+    <node pkg="ackerman" type="lanekeepingassist" name="lanekeepingassist" output="screen"/>
+
+    
+</launch>
