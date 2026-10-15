@@ -274,5 +274,5 @@ Proyek ini dibuat untuk keperluan akademis. Lisensi akan ditentukan kemudian.
 ## 👤 Kontak
 
 **Azra Pralingga**  
-Sarjana Terapan Teknik Elektronika  
+Sarjana Terapan Teknik Komputer PENS 
 📧 [GitHub: MrFuther](https://github.com/MrFuther)
