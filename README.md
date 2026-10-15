@@ -2,7 +2,7 @@
 
 > **Proyek Akhir Sarjana Terapan** | Teknik Komputer | 2026  
 > Pengembang: **Azra Pralingga**
-
+> Pembimbing: **Bima Sena Bayu Dewantara, S.ST., M.T., Ph.D.**
 ---
 
 ## 📋 Deskripsi Proyek
